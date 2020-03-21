@@ -1,0 +1,19 @@
+language: node_js
+
+sudo: true
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - "13"
+  - "12"
+  - "11"
+  - "10"
+
+addons:
+  chrome: stable
+
+script:
+  - npm run test

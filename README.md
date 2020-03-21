@@ -1,10 +1,12 @@
 # test-angular-services-testing
 
-Testing all async solutions in Angular application.
+[![travis](https://img.shields.io/travis/piecioshka/test-angular-services-testing.svg)](https://travis-ci.org/piecioshka/test-angular-services-testing)
+
+📒 Testing all async solutions in Angular application.
 
 ## Demo 🎉
 
-<https://piecioshka.github.io/test-angular-services-testing>
+<https://piecioshka.github.io/test-angular-services-testing/>
 
 ## Scenarios
 
@@ -22,4 +24,9 @@ Testing all async solutions in Angular application.
 [4]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L55
 [5]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L74
 [6]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L118
-[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L143
+[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L138
+
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2020
