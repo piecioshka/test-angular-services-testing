@@ -21,6 +21,16 @@ describe('PhotosService', () => {
     photosService = TestBed.inject(PhotosService);
   });
 
+  describe('Spy methods', () => {
+    it('should use XMLHttpRequest', () => {
+      spyOn(XMLHttpRequest.prototype, 'send');
+      photosService.fetchPhotosWithCallback(() => null);
+      expect(XMLHttpRequest.prototype.send).toHaveBeenCalled();
+      expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
+      expect(XMLHttpRequest.prototype.send).toHaveBeenCalledWith();
+    });
+  });
+
   describe('Get Photos', () => {
     describe('via basic return', () => {
       it('should returns photos', () => {
@@ -56,7 +66,7 @@ describe('PhotosService', () => {
       it('should return photos', (done) => {
         const _clock_ = jasmine.clock();
         _clock_.install();
-        _clock_.mockDate(new Date(0)); // is needed for rxjs/delay
+        _clock_.mockDate(new Date(0)); // Is needed for delay() operator
         photosService.getPhotosObservable()
           .subscribe({
             next: (photos) => {
@@ -72,32 +82,6 @@ describe('PhotosService', () => {
 
   describe('Fetch Photos', () => {
     describe('via Callbacks', () => {
-      it('should use XMLHttpRequest', () => {
-        jasmine.Ajax.install();
-
-        spyOn(XMLHttpRequest.prototype, 'send');
-        photosService.fetchPhotosWithCallback(() => null);
-        expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
-
-        jasmine.Ajax.uninstall();
-      });
-
-      it('should use JSON.parse', (done) => {
-        jasmine.Ajax.install();
-
-        spyOn(JSON, 'parse');
-        photosService.fetchPhotosWithCallback(() => {
-          expect(JSON.parse).toHaveBeenCalledTimes(1);
-          done();
-          jasmine.Ajax.uninstall();
-        });
-
-        const request = jasmine.Ajax.requests.mostRecent();
-        request.respondWith({
-          responseText: JSON.stringify(photosMock)
-        });
-      });
-
       it('should fetch photos', (done) => {
         jasmine.Ajax.install();
 

@@ -18,14 +18,13 @@
 * [HTTP Request: Promises][6]
 * [HTTP Request: Observables][7]
 
-[1]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L25
-[2]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L32
-[3]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L41
-[4]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L55
-[5]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L74
-[6]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L118
-[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L138
-
+[1]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L35
+[2]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L42
+[3]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L51
+[4]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L65
+[5]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L84
+[6]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L102
+[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L122
 
 ## License
 
