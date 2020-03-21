@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  photosUrl: 'https://fakes.herokuapp.com/photos'
 };

@@ -1,0 +1,24 @@
+:host {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-weight: 200;
+}
+
+em {
+  color: #fff;
+  font-style: normal;
+  padding: 3px 5px;
+  background-color: #666;
+  border-radius: 3px;
+}
+
+img {
+  margin: 10px;
+  border: 1px solid;
+  width: 300px;
+  height: 150px;
+  background-color: #000;
+  border-radius: 3px;
+}
