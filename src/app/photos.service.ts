@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Photos } from 'src/app/photos.interface';
+import { SaveResponse } from 'src/app/response.interface';
 import { environment } from 'src/environments/environment';
 import { photosMock } from 'src/fixtures/photos.mock';
 
@@ -56,5 +57,26 @@ export class PhotosService {
 
   fetchPhotosWithObservables(): Observable<Photos> {
     return this.http.get<Photos>(environment.photosUrl);
+  }
+
+  sendPhotosWithCallback(photos: Photos, cb: (res: SaveResponse) => void) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', environment.photosUrl, true);
+    xhr.addEventListener('load', () => {
+      cb({ status: true });
+    });
+    xhr.send(JSON.stringify(photos));
+  }
+
+  sendPhotosWithPromise(photos: Photos): Promise<SaveResponse> {
+    return this.http.post<SaveResponse>(environment.photosUrl, {
+        body: JSON.stringify(photos)
+    }).toPromise();
+  }
+
+  sendPhotosWithObservables(photos: Photos): Observable<SaveResponse> {
+    return this.http.post<SaveResponse>(environment.photosUrl, {
+        body: JSON.stringify(photos)
+    });
   }
 }

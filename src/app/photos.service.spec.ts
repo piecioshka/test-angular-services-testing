@@ -5,6 +5,7 @@ import 'jasmine-ajax';
 import { PhotosService } from './photos.service';
 import { environment } from 'src/environments/environment';
 import { photosMock } from 'src/fixtures/photos.mock';
+import { SaveResponse } from 'src/app/response.interface';
 
 describe('PhotosService', () => {
   let photosService: PhotosService;
@@ -134,6 +135,69 @@ describe('PhotosService', () => {
         // 2. Flushing with mocks data
         const testRequest = httpMock.expectOne(environment.photosUrl);
         testRequest.flush(photosMock);
+      });
+    });
+  });
+
+  describe('Send Photos', () => {
+    describe('via Callbacks', () => {
+      it('should send photos', (done) => {
+        jasmine.Ajax.install();
+
+        photosService.sendPhotosWithCallback(photosMock, (res: SaveResponse) => {
+          expect(res.status).toBeTruthy();
+          done();
+          jasmine.Ajax.uninstall();
+        });
+
+        const request = jasmine.Ajax.requests.mostRecent();
+        request.respondWith({
+          responseText: JSON.stringify({ status: true })
+        });
+      });
+    });
+
+    describe('via Promises', () => {
+      it('should fetch photos', async () => {
+        // 0. Before
+        const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
+
+        // 1. Register to make HTTP request
+        const response = photosService.sendPhotosWithPromise(photosMock);
+
+        // 2. Mocking & flushing response
+        const backend = httpMock.expectOne({
+            url: environment.photosUrl,
+            method: 'post'
+        });
+        backend.flush({ status: true });
+
+        // 3. Receive response
+        const data = await response;
+
+        // 4. Assertion
+        expect(data.status).toBeTruthy();
+      });
+    });
+
+    describe('via Observables', () => {
+      it('should fetch photos', () => {
+        // 0. Before
+        const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
+
+        // 1. Register subscription (start listen)
+        photosService.sendPhotosWithObservables(photosMock).subscribe({
+          next: (res: SaveResponse) => {
+            expect(res.status).toBeTruthy();
+          }
+        });
+
+        // 2. Flushing with mocks data
+        const testRequest = httpMock.expectOne({
+            url: environment.photosUrl,
+            method: 'post'
+        });
+        testRequest.flush({ status: true });
       });
     });
   });
