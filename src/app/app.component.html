@@ -3,7 +3,7 @@
 <article>
   <h2>... with <em>Callbacks</em></h2>
   <ng-container *ngFor="let photo of photosFromCallback">
-    <img [src]="photo.imageUrl" alt="">
+    <img [src]="photo.photoUrl" alt="">
   </ng-container>
   <p *ngIf="!photosFromCallback">Loading....</p>
 </article>
@@ -11,7 +11,7 @@
 <article>
   <h2>... with <em>Promises</em></h2>
   <ng-container *ngFor="let photo of photosFromPromises">
-    <img [src]="photo.imageUrl" alt="">
+    <img [src]="photo.photoUrl" alt="">
   </ng-container>
   <p *ngIf="!photosFromPromises">Loading....</p>
 </article>
@@ -19,7 +19,7 @@
 <article>
   <h2>... with <em>Observables</em></h2>
   <ng-container *ngFor="let photo of photosFromObservables">
-    <img [src]="photo.imageUrl" alt="">
+    <img [src]="photo.photoUrl" alt="">
   </ng-container>
   <p *ngIf="!photosFromObservables">Loading....</p>
 </article>
