@@ -5,7 +5,7 @@ import { delay } from 'rxjs/operators';
 import { Photos } from 'src/app/photos.interface';
 import { SaveResponse } from 'src/app/response.interface';
 import { environment } from 'src/environments/environment';
-import { photosMock } from 'src/fixtures/photos.mock';
+import { photosFactory } from 'src/fixtures/photos.fixture';
 
 const ONE_SECOND = 1000;
 const TEN_SECOND = ONE_SECOND * 10;
@@ -20,23 +20,23 @@ export class PhotosService {
   ) { }
 
   getPhotos(): Photos {
-    return photosMock;
+    return photosFactory();
   }
 
   getPhotosCallback(cb: (photos: Photos) => void) {
-    cb(photosMock);
+    cb(photosFactory());
   }
 
   getPhotosPromise(): Promise<Photos> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(photosMock);
+        resolve(photosFactory());
       }, TEN_SECOND);
     });
   }
 
   getPhotosObservable() {
-    return of(photosMock).pipe(
+    return of(photosFactory()).pipe(
       delay(TEN_SECOND)
     );
   }
