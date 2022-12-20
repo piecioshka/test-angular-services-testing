@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  photosUrl: 'https://fakes.herokuapp.com/photos'
+  photosUrl: 'https://fakes.piecioshka.io/photos'
 };
 
 /*
