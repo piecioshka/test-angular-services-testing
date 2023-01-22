@@ -4,7 +4,7 @@
 
 📒 Testing all async solutions in Angular application.
 
-## Demo 🎉
+## Preview 🎉
 
 <https://piecioshka.github.io/test-angular-services-testing/>
 
