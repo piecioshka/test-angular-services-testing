@@ -46,31 +46,27 @@ describe("AppComponent", () => {
     expect(component.photosFromCallback.length).toEqual(3);
   });
 
-  it("should load photos via Promises", fakeAsync(() => {
+  it("should load photos via Promises", async () => {
     expect(component.photosFromPromises).toEqual(null);
 
-    component.setupPhotosFromPromises();
+    const response = component.setupPhotosFromPromises();
 
-    const httpMock: HttpTestingController = TestBed.inject(
-      HttpTestingController
-    );
+    const httpMock = TestBed.inject(HttpTestingController);
     const testRequest = httpMock.expectOne(environment.photosUrl);
     testRequest.flush(photosFactory());
 
-    tick();
+    await response;
 
     expect(component.photosFromPromises).toEqual(jasmine.any(Array));
     expect(component.photosFromPromises.length).toEqual(3);
-  }));
+  });
 
   it("should load photos via Observables", () => {
     expect(component.photosFromObservables).toEqual(null);
 
     component.setupPhotosFromObservables();
 
-    const httpMock: HttpTestingController = TestBed.inject(
-      HttpTestingController
-    );
+    const httpMock = TestBed.inject(HttpTestingController);
     const testRequest = httpMock.expectOne(environment.photosUrl);
     testRequest.flush(photosFactory());
 

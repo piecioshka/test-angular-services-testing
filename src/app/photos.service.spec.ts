@@ -100,9 +100,7 @@ describe("PhotosService", () => {
     describe("via Promises", () => {
       it("should fetch photos", async () => {
         // 0. Before
-        const httpMock: HttpTestingController = TestBed.inject(
-          HttpTestingController
-        );
+        const httpMock = TestBed.inject(HttpTestingController);
 
         // 1. Register to make HTTP request
         const response = photosService.fetchPhotosWithPromise();
@@ -122,9 +120,7 @@ describe("PhotosService", () => {
     describe("via Observables", () => {
       it("should fetch photos", () => {
         // 0. Before
-        const httpMock: HttpTestingController = TestBed.inject(
-          HttpTestingController
-        );
+        const httpMock = TestBed.inject(HttpTestingController);
 
         // 1. Register subscription (start listen)
         photosService.fetchPhotosWithObservables().subscribe({
@@ -164,9 +160,7 @@ describe("PhotosService", () => {
     describe("via Promises", () => {
       it("should fetch photos", async () => {
         // 0. Before
-        const httpMock: HttpTestingController = TestBed.inject(
-          HttpTestingController
-        );
+        const httpMock = TestBed.inject(HttpTestingController);
 
         // 1. Register to make HTTP request
         const response = photosService.sendPhotosWithPromise(photosFactory());
@@ -189,9 +183,7 @@ describe("PhotosService", () => {
     describe("via Observables", () => {
       it("should fetch photos", () => {
         // 0. Before
-        const httpMock: HttpTestingController = TestBed.inject(
-          HttpTestingController
-        );
+        const httpMock = TestBed.inject(HttpTestingController);
 
         // 1. Register subscription (start listen)
         photosService.sendPhotosWithObservables(photosFactory()).subscribe({
