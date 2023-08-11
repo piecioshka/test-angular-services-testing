@@ -25,7 +25,7 @@
 [1]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L35
 [2]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L42
 [3]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L51
-[4]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L65
-[5]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L84
-[6]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L102
-[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L122
+[4]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L64
+[5]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L82
+[6]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L100
+[7]: https://github.com/piecioshka/test-angular-services-testing/blob/master/src/app/photos.service.spec.ts#L120
